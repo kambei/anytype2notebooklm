@@ -1,4 +1,5 @@
 import os
+import re
 import argparse
 from pathlib import Path
 
@@ -31,6 +32,12 @@ def merge_markdown_files(input_dir, output_file):
                 
                 with open(md_file, "r", encoding="utf-8") as infile:
                     content = infile.read()
+                    
+                # Fix escaping issues (e.g. \_ -> _)
+                content = content.replace(r"\_", "_")
+
+                # Remove YAML frontmatter
+                content = re.sub(r'^---\n.*?\n---\n', '', content, flags=re.DOTALL)
                 
                 outfile.write(f"{header}\n\n")
                 outfile.write(content)
