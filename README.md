@@ -6,6 +6,7 @@ A simple Python script to consolidate Anytype notes (exported as Markdown) into 
 
 - Recursively scans a directory for `.md` files.
 - Merges all found files into one output file.
+- **Incremental Updates**: If the output file already exists, the script will only append new files that aren't already included.
 - Adds headers (`# Source: <filename>`) to distinguish between original notes.
 - Adds separators (`---`) between notes.
 
@@ -17,6 +18,8 @@ A simple Python script to consolidate Anytype notes (exported as Markdown) into 
     ```bash
     python anytype_to_notebooklm.py <path_to_anytype_export> <output_file.md>
     ```
+
+    *Note: If `<output_file.md>` already exists, the script will check its content and only add files from the input directory that are missing.*
 
     **Example:**
 
