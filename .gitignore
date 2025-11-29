@@ -94,3 +94,9 @@ venv.bak/
 # IDEs
 .vscode/
 .idea/
+
+# Personal files
+Anytype.*
+*.md
+!README.md
+README_PERS.md

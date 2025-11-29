@@ -65,12 +65,10 @@ def merge_markdown_files(input_dir, output_file):
                 content = re.sub(r'^---\n.*?\n---\n', '', content, flags=re.DOTALL)
                 
                 # Ensure separation if appending
-                if mode == "a" and new_files_count == 0 and outfile.tell() > 0:
-                     outfile.write("\n\n---\n\n")
-
                 outfile.write(f"{header}\n\n")
                 outfile.write(content)
-                outfile.write("\n\n---\n\n") # Separator
+                outfile.write("\n\n===============\n\n") 
+
                 
                 print(f"Processed: {rel_path}")
                 new_files_count += 1

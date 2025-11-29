@@ -8,7 +8,7 @@ A simple Python script to consolidate Anytype notes (exported as Markdown) into 
 - Merges all found files into one output file.
 - **Incremental Updates**: If the output file already exists, the script will only append new files that aren't already included.
 - Adds headers (`# Source: <filename>`) to distinguish between original notes.
-- Adds separators (`---`) between notes.
+- Adds separators (`===============`) between notes.
 
 ## Usage
 
@@ -25,6 +25,18 @@ A simple Python script to consolidate Anytype notes (exported as Markdown) into 
 
     ```bash
     python anytype_to_notebooklm.py "C:\Users\Me\Desktop\AnytypeExport" "C:\Users\Me\Desktop\NotebookLM_Source.md"
+    ```
+
+    **Advanced Examples (Append Date):**
+
+    *PowerShell:*
+    ```powershell
+    python anytype_to_notebooklm.py "path/to/export" "output_$(Get-Date -Format 'yyyy-MM-dd').md"
+    ```
+
+    *Bash:*
+    ```bash
+    python anytype_to_notebooklm.py "path/to/export" "output_$(date +%Y-%m-%d).md"
     ```
 
 3.  **Upload** the resulting `NotebookLM_Source.md` to NotebookLM.
