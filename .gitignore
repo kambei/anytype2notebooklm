@@ -100,3 +100,4 @@ Anytype.*
 *.md
 !README.md
 README_PERS.md
+*.pdf
